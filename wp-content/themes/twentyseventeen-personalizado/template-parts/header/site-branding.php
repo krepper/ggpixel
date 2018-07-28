@@ -16,9 +16,11 @@
 
 		<div class="site-branding-text">
 			<?php if ( is_front_page() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">GGPixel</a></h1>
+				<div style="background-image: url('img/titulobg.png'); text-align: center; display: table-cell; vertical-align: middle; width: 210px; height: 75px">
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">GGPIXEL</a></h1>
+				</div>
 			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">GGPixel</a></p>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">GGPIXEL</a></p>
 			<?php endif; ?>
 
 			<?php

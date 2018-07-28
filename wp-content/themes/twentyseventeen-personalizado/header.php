@@ -18,6 +18,23 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
+	<style>
+		.efeitoDegrade{
+			background: #1793d6;
+			background: -moz-linear-gradient(left, #1793d6 0%, #6adfff 100%);
+			background: -webkit-gradient(left top, right top, color-stop(0%, #1793d6), color-stop(100%, #6adfff));
+			background: -webkit-linear-gradient(left, #1793d6 0%, #6adfff 100%);
+			background: -o-linear-gradient(left, #1793d6 0%, #6adfff 100%);
+			background: -ms-linear-gradient(left, #1793d6 0%, #6adfff 100%);
+			background: linear-gradient(to right, #1793d6 0%, #6adfff 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1793d6', endColorstr='#6adfff', GradientType=1 );
+		}
+
+		@font-face {
+		  font-family: BurbankBigCondensed-Black;
+		  src: url("font/fonte.woff") type
+		}
+	</style>
 
 <?php wp_head(); ?>
 </head>
@@ -52,6 +69,6 @@
 		echo '</div><!-- .single-featured-image-header -->';
 	endif;
 	?>
-
 	<div class="site-content-contain">
+		<!--<div class="efeitoDegrade"><p style="text-align: center; color: #fff"> Colocar texto aqui</p></div>-->
 		<div id="content" class="site-content">
