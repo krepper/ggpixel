@@ -30,6 +30,15 @@
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1793d6', endColorstr='#6adfff', GradientType=1 );
 		}
 
+		.tituloPost {
+			background-image: url('img/titulobg.png');
+			text-align: center;
+			display: table-cell;
+			vertical-align: middle;
+			width: 210px;
+			height: 75px;
+		}
+
 		@font-face {
 		  font-family: BurbankBigCondensed-Black;
 		  src: url("font/fonte.woff") type

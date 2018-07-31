@@ -11,7 +11,6 @@
  */
 
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 	if ( is_sticky() && is_home() ) :
@@ -50,6 +49,7 @@
 	<?php endif; ?>
 
 	<div class="entry-content">
+
 		<?php
 		/* translators: %s: Name of current post */
 		the_content( sprintf(
