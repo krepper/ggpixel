@@ -70,12 +70,10 @@
                         <option value="ESCOPETA">EXPLOSIVA</option>
                       </select>
                     </div>
-
                     <div class="form-group">
                       <label for="nomeArma">Nome</label>
                       <input class="form-control" id="nomeArma" type="text"/>
                     </div>
-
                     <div class="form-group">
                       <label for="raridadeArma">Raridade</label>
                       <select class="form-control" id="raridadeArma">
@@ -86,47 +84,47 @@
                         <option value="5">LENDÁRIO</option>
                       </select>
                     </div>
-
                     <div class="form-group">
                       <label for="dpsArma">DPS</label>
-                      <input class="form-control" id="dpsArma" type="number" min="0"/>
+                      <input class="form-control" id="dpsArma" type="text"/>
                       <small id="dpsArmaHelp" class="form-text text-muted">Obs: Use '.'(ponto) ao invés de ','(vírgula);</small>
                     </div>
-
                     <div class="form-group">
                       <label for="danoArma">Dano</label>
-                      <input class="form-control" id="danoArma" type="number" min="0"/>
+                      <input class="form-control" id="danoArma" type="text"/>
                       <small id="danoArma" class="form-text text-muted">Obs: Use '.'(ponto) ao invés de ','(vírgula);</small>
                     </div>
-
                     <div class="form-group">
                       <label for="cdanoArma">Dano em construção</label>
-                      <input class="form-control" id="cdanoArma" type="number" min="0"/>
+                      <input class="form-control" id="cdanoArma" type="text"/>
                       <small id="cdanoArma" class="form-text text-muted">Obs: Use '.'(ponto) ao invés de ','(vírgula);</small>
                     </div>
-
                     <div class="form-group">
                       <label for="firerateArma">FIRE RATE</label>
-                      <input class="form-control" id="firerateArma" type="number" min="0"/>
+                      <input class="form-control" id="firerateArma" type="text"/>
                       <small id="firerateArma" class="form-text text-muted">Obs: Use '.'(ponto) ao invés de ','(vírgula);</small>
                     </div>
-
                     <div class="form-group">
                       <label for="penteArma">Pente</label>
-                      <input class="form-control" id="penteArma" type="number" min="0"/>
+                      <input class="form-control" id="penteArma" type="text"/>
                     </div>
-
                     <div class="form-group">
                       <label for="tcarregamentoArma">Tempo de carregamento</label>
-                      <input class="form-control" id="tcarregamentoArma" type="number" min="0"/>
+                      <input class="form-control" id="tcarregamentoArma" type="text"/>
                     </div>
-
                     <div class="form-group">
                       <label for="urlArma">URL Imagem da arma</label>
                       <input class="form-control" id="urlArma" type="text"/>
                       <small id="urlArma" class="form-text text-muted">Obs: de preferência, utilize imagem com dimensão #x#</small>
                     </div>
-
+                    <div class="form-group">
+                      <label for="statArma">Status</label>
+                      <select class="form-control" id="statArma">
+                        <option value="1">DISPONÍVEL</option>
+                        <option value="2">COFRE</option>
+                        <option value="3">ESPERANDO</option>
+                      </select>
+                    </div>
 
                 </div>
                 <div class="modal-footer">
@@ -138,16 +136,28 @@
             </div>
           </div> <!-- #ADICIONAR DADOS -->
 
+          <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
           <script>
-            $('#adicionarArma').submit(function(){
 
-              $.post("functions.php?var=1", success: function(x){
-                if(x==1){
-                  alert("DEU CERTO");
-                }
+            $('#adicionarArma').submit(function(){
+              $.post("functions.php?var=1",{
+                tipoArma: $('#tipoArma').val(),
+                nomeArma: $('#nomeArma').val(),
+                raridadeArma: $('#raridadeArma').val(),
+                dpsArma: $('#dpsArma').val(),
+                danoArma: $('#danoArma').val(),
+                cdanoArma: $('#cdanoArma').val(),
+                firerateArma: $('#firerateArma').val(),
+                penteArma: $('#penteArma').val(),
+                tcarregamentoArma: $('#tcarregamentoArma').val(),
+                urlArma: $('#urlArma').val(),
+                statArma: $('#statArma').val()
+              }, function(x){
+                alert(x);
               });
               return false;
-            });
+            })
+
 
           </script>
 
@@ -163,7 +173,7 @@
       }
     ?>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
